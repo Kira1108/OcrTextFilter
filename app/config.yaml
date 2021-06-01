@@ -1,3 +1,3 @@
 ---
-  sensative_path: "/Users/huan/desktop/OcrSentence/app/datasets/word_correct.txt"
+  sensative_path: "/home/wanghuan/codes/personal_projects/OcrTextFilter/app/datasets/word_correct.txt"
   word_vector_path: "/Users/huan/desktop/OcrSentence/app/datasets/Tencent_AILab_ChineseEmbedding/Tencent_AILab_ChineseEmbedding.txt"

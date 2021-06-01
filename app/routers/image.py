@@ -13,7 +13,7 @@ ocr_parser = OCRTextParser()
 
 @router.get("/")
 async def parse_image(path:str):
-    r = ocr_parser.parse(path)
+    r = await ocr_parser.parse(path)
     return {"data":
                 {"is_contain":any(r.values()),
                  "detail":r

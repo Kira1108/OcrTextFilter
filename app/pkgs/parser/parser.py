@@ -2,6 +2,9 @@ from typing import List
 from ...config import config
 from ..ocr import ImageToText
 from ..texts import DFAFilter
+import logging
+
+logger = logging.getLogger("__name__")
 
 class OCRTextParser():
     def __init__(self, image_handler = None, text_handler = None):
@@ -12,7 +15,8 @@ class OCRTextParser():
     def _initialize(self):
         self.text_handler.parse(config['sensative_path'])
         
-    def parse(self, img_path):
+    async def parse(self, img_path):
+        logger.info(f'Parsing {img_path}')
         texts = self.image_handler.detect(img_path)
         return {t:self.text_handler.is_contain_sensi_key_word(t) 
                 for t in texts}
@@ -26,7 +30,7 @@ class TextParser():
     def _initialize(self):
         self.text_handler.parse(config['sensative_path'])
         
-    def parse(self, texts:List[str]):
+    async def parse(self, texts:List[str]):
         return {t:self.text_handler.is_contain_sensi_key_word(t) for t in texts}
         
     

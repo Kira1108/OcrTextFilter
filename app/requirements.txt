@@ -7,3 +7,5 @@ fastapi
 sklearn
 matplotlib
 seaborn
+pyyaml
+pymysql
